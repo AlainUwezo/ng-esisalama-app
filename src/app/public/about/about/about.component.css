@@ -1,0 +1,12 @@
+.collapsible li.active i{
+  -ms-transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+.collapsible-header{
+  font-weight: bold;
+}
+
+.collapsible ul li{
+  list-style-type: disc;
+}

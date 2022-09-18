@@ -1,0 +1,94 @@
+<div style="display: contents!important;">
+  <div class="carousel carousel-slider"  id="demo-carousel-auto" data-indicators="true">
+    <a *ngFor="let slide of slides"
+      class="carousel-item">
+      <img id="carousel_img" class="responsive-img" [src]="slide.image">
+    </a>
+  </div>
+</div>
+
+
+<div class="center-align row">
+  <h1 class="#e57373 red lighten-2 white-text text-darken-1 hide-on-large-only"
+  style="margin-top: 0px!important; padding: 5px 0px;">
+    Bienvenue chez nous
+  </h1><br/>
+  <img src="./assets/img/student.png"
+      class="responsive-img col offset-s2 s8 m6 offset-m3 l4 offset-l4 hide-on-large-only" alt="">
+</div>
+
+<div id="carousel-actuality" class="carousel carousel-actuality row hide-on-med-and-up">
+  <h2 class="center white z-depth-1 hide-on-med-and-up"
+    style="padding: 5px 0px;">ACTUALITES</h2>
+  <div *ngFor="let actuality of actualities" class="col s10 carousel-item">
+    <div class="row">
+      <div class="col s12 m7" >
+        <div class="card">
+          <div class="card-image #263238 blue-grey darken-4">
+            <img class="responsive-img" [src]="actuality.image"
+              style="height: 150px; object-fit: contain;">
+            <span class="card-title">{{actuality.title}}</span>
+            <span class="grey-text right" style="margin-right: 5px;">08/12/2020</span>
+          </div>
+          <div class="card-content">
+            <p>{{(actuality.description!.length > 50)?(actuality.description| slice:0:50)+
+              '...':(actuality.description)}}
+            </p>
+          </div>
+          <div *ngIf="actuality.description!.length > 50" class="card-action">
+            <a href="#" class="see-more blue-text" (click)="onShowActuality(actuality)">Voir plus</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+<div class="container hide-on-small-only" style="padding: 20px 0px;">
+  <h2 class="center white z-depth-1 hide-on-small-only"
+      style="padding: 5px 0px;">ACTUALITES</h2>
+  <div class="row">
+    <div class="col s12 m6 l4" *ngFor="let actuality of actualities.slice(0, 3)">
+      <div class="card">
+        <div class="card-image">
+          <img [src]="actuality.image">
+          <span class="card-title">{{actuality.title}}</span>
+          <span class="grey-text right" style="margin-right: 5px;">08/12/2020</span>
+        </div>
+        <div class="card-content">
+          <p>{{(actuality.description!.length > 150)?(actuality.description| slice:0:150)+
+            '...':(actuality.description)}}
+          </p>
+        </div>
+        <div *ngIf="actuality.description.length > 150" class="card-action">
+          <a class="see-more blue-text" (click)="onShowActuality(actuality)">Voir plus</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h2 class="center white z-depth-1 hide-on-med-and-up" style="padding: 5px 0px;">EVENEMENTS</h2>
+<div class="events container" style="margin-top: 20px;">
+  <h2 class="center #eceff1 white z-depth-1 hide-on-small-only" style="padding: 5px 0px;">EVENEMENTS</h2>
+  <div class="row">
+
+    <div *ngFor="let event of events" class="col s12 m6 l4">
+      <div class="card white z-depth-1">
+        <div class="card-content">
+          <span class="red-text card-title">
+            {{event.title | uppercase}}
+          </span>
+          <p>{{(event.description.length > 100) ? (event.description | slice:0:150) +
+              '...' : event.description}}</p>
+        </div>
+        <div *ngIf="event.description.length > 100" class="card-action">
+          <a class="#1b5e20-text green-text text-darken-4 see-more"
+            (click)="onShowEvent(event)">Voir plus</a>
+        </div>
+      </div>
+    </div>
+
+</div>

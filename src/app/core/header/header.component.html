@@ -1,0 +1,147 @@
+<!-- Barre de navigation -->
+<div id="header" class="navbar-fixed">
+  <!-- Barre d'adresse -->
+  <!-- <div *ngIf="adress_bar" class="#e8eaf6 indigo lighten-5 #1a237e-text hide-on-med-and-down"
+        style="padding:5px 20px;">
+    <span>
+      <strong>
+        {{adress_bar.address.value}}
+        <i class="material-icons left">{{adress_bar.address.icon}}</i>
+      </strong>
+    </span>
+    <div class="right hide-on-med-and-down red-text red-text text-darken-4">
+      <div *ngFor="let contact of adress_bar.contacts"
+          style="display: inline-block; margin-right: 10px;">
+        {{contact.value}}
+        <i class="material-icons left">{{contact.icon}}</i>
+      </div>
+    </div>
+  </div> -->
+
+  <nav class="nav-extended #006064 cyan darken-4">
+    <div class="nav-wrapper">
+      <div class="container" #nav>
+        <img src="./assets/img/logoesis.png" height="50" style="vertical-align: middle;">&nbsp;&nbsp;
+        <a href="#" class="brand-logo left valign-wrapper">
+          <span class="hide-on-med-and-down" style="margin-top: -10px;">Ecole Supérieure d'Informatique Salama</span>
+        </a>
+        <a href="#" class="hide-on-large-only center-align flow-text">ESIS</a>
+        <span class="right">
+          <a href="#"
+            data-target="slide-out"
+            class="sidenav-trigger white-text left hide-on-large-only">
+            <i class="material-icons"
+                style="cursor: pointer;">
+                menu</i>
+          </a>
+
+        </span>
+        <ul id="ul" class="right hide-on-med-and-down">
+          <li>
+            <a [routerLink]="['/home']" routerLinkActive="nav_active_link">
+              ACCUEIL
+              <i class="material-icons left">home</i>
+            </a>
+          </li>
+          <li id="education" (click)="onClickNavItem()">
+            <a id="educationRouter" #educationLink>
+              EDUCATION
+              <i class="material-icons left">book</i>
+              <i id="arrow_icon" class="material-icons right">keyboard_arrow_down</i>
+            </a>
+          </li>
+          <li>
+            <a [routerLink]="['/actuality']" routerLinkActive="nav_active_link">
+              ACTUALITES
+              <i class="material-icons left">fiber_new</i>
+            </a>
+          </li>
+          <li>
+            <a [routerLink]="['/about']" routerLinkActive="nav_active_link">
+              A PROPOS
+              <i class="material-icons left">info</i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="display-nav-content-item red hide-on-med-and-down" #navContentItem>
+      <div class="container">
+        <ul class="tabs tabs-transparent">
+          <li class="tab" *ngFor="let lien of nav_bar_item_link">
+            <a *ngIf="!lien.externe" class="white-text" routerLink="{{lien.href}}" routerLinkActive="tabs_active_link">
+              {{lien.value}}
+              <i *ngIf="lien.icon" class="material-icons left"
+                  style="line-height: 50px;">{{lien.icon}}</i>
+            </a>
+            <a *ngIf="lien.externe" href="{{lien.href}}" target="_blank">
+              {{lien.value}}
+              <i *ngIf="lien.icon" class="material-icons left"
+                  style="line-height: 50px;">{{lien.icon}}</i></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>
+
+
+<!-- Barre d'adresse dans les petits ecrans -->
+<div *ngIf="adress_bar" class="address_mobile_bar white-text #006064 cyan darken-4  hide-on-large-only"
+      style="padding:5px 20px;">
+  <span>
+    <strong>
+      {{adress_bar.address.value}}
+      <i class="material-icons left">{{adress_bar.address.icon}}</i>
+    </strong>
+  </span>
+</div>
+<!-- Mobile nav -->
+<div>
+  <ul id="slide-out" class="sidenav collapsible white hide-on-large-only" #sidenav>
+
+      <li>
+        <!-- On gere cette route sur un petit ecran avec deux liens afin d'actualiser le carousel 3d
+          Ceci car le carousel 3d necessite une rafraichissement ce que ne fait le routerLink
+          Nous passons le lien interne pour gerer la couleur si le lien est actif
+        -->
+        <a href="/home">
+          <a class="sidenav-close"
+             href="/home" routerLink="/home" routerLinkActive="red-text">
+            ACCUEIL
+          </a>
+          <i class="material-icons left">home</i>
+        </a>
+      </li>
+      <li class="collapse_li" id="education" (click)="onClickNavItem()">
+        <a class="collapsible-header" routerLinkActive="red-text">
+          EDUCATION
+          <i class="material-icons left">book</i>
+          <i class="material-icons arrow right">keyboard_arrow_down</i>
+        </a>
+        <div class="collapsible-body">
+          <ul>
+            <li *ngFor="let link of education_nav">
+              <a *ngIf="!link.externe" class="sidenav-close" id="{{link.id}}"
+                routerLink="{{link.href}}" routerLinkActive="red white-text">{{link.value}}</a>
+              <a *ngIf="link.externe" href="{{link.href}}" target="_blank">{{link.value}}</a>
+            </li>
+          </ul>
+        </div>
+      </li>
+      <li>
+        <a class="sidenav-close" [routerLink]="['/actuality']" routerLinkActive="sidenav_active_a">
+          ACTUALITES
+          <i class="material-icons left">fiber_new</i>
+        </a>
+      </li>
+      <li class="collapse_li">
+        <a [routerLink]="['/about']" routerLinkActive="sidenav_active_a"
+            class="collapsible-header sidenav-close">
+          À PROPOS
+          <i class="material-icons left">info</i>
+        </a>
+      </li>
+    </ul>
+</div>
+

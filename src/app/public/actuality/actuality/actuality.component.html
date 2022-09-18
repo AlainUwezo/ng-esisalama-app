@@ -1,0 +1,58 @@
+<main>
+  <div class="row" >
+    <div class="slider events_topbar carousel-actuality col s12 l9">
+      <div class="slides center center-align white-text valign-wrapper">
+        <li *ngFor="let slide of slides" style="list-style-type: none;">
+          <img [src]="slide.image" alt="Image" class="responsive-img" />
+          <div class="caption {{slide.align}}">
+            <span class="title" style="font-size: 30px;">{{slide.title}}</span><br/><br/>
+              <p class="white-text" style="font-size: 16px;">{{slide.title}}</p></div>
+        </li>
+      </div>
+
+      <div class="#ef5350 red lighten-1 white-text z-depth-1 center-align" style="padding: 10px 0px; margin: 10px 0px;">
+        ACTUALITES
+      </div>
+
+    </div>
+    <div class="col s12 l3 hide-on-med-and-down" style="height: 300px;">
+      <div class="row">
+        <div class="col s12">
+          <div class="card">
+            <div class="card-image">
+              <img src="{{randomActuality.image}}">
+              <span class="card-title">{{randomActuality.title}}</span>
+              <span class="grey-text right" style="margin-right: 5px;">08/12/2020</span>
+            </div>
+            <div class="card-action whhite z-depth-1">
+              <a class="waves-effect waves-light btn" (click)="onShowActuality(randomActuality)"class="see-more blue-text">Voir plus</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+</div>
+
+<div class="row" style="margin-top: 50px;">
+  <div class="col s12 m6 l3" *ngFor="let slide of slides; let i=index">
+    <div class="card">
+      <div class="card-image">
+        <img [src]="slide.image">
+        <span class="card-title">{{slide.title}}</span>
+        <span class="grey-text right" style="margin-right: 5px;">08/12/2020</span>
+      </div>
+      <div class="card-content">
+        <p>{{(slide.description.length > 100) ? (slide.description | slice:0:150) +
+          '...' : slide.description}}</p>
+      </div>
+      <div *ngIf="slide.description.length > 100" class="card-action">
+        <a class="see-more blue-text" (click)="onShowActuality(slide)">
+          Voir plus
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+</main>

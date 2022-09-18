@@ -1,0 +1,49 @@
+.nav-wrapper{
+  background-color: #051e3fe2!important;
+}
+.nav_active_link{
+  color: red;
+  background-color: white;
+}
+.address_mobile_bar{
+  background-color: #051e3fe2!important;
+  padding: 10px 20px!important;
+}
+.brand-logo{
+  padding-left: 10px;
+  font-size: 20px;
+}
+.display-nav-content-item{
+  display: none;
+}
+.tabs a:hover{
+  color: #090442!important;
+  font-weight: 500;
+  border-bottom: 2px solid #090442;
+}
+.tabs_active_link{
+  background-color: white;
+  color: #090442!important;;
+}
+.sidenav li a{
+  color: rgb(78, 78, 78);
+}
+.sidenav li a i{
+  color: rgb(78, 78, 78);
+}
+.sidenav_active_a{
+  color: red!important;
+  font-weight: 500;
+  border-right: 5px solid red;
+}
+.sidenav_active_a i{
+  color: red!important;
+}
+.collapse_li{
+  padding-left: 15px;
+}
+.collapsible li.active i.arrow{
+  -ms-transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+}

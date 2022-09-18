@@ -1,0 +1,7 @@
+.carousel-actuality{
+  height: 300px!important;
+}
+img{
+  filter: brightness(50%);
+  -webkit-filter: brightness(50%);
+}

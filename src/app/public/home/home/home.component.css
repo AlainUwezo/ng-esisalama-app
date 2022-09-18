@@ -1,0 +1,33 @@
+.carousel-slider{
+  /* filter: brightness(80%); */
+  /* -webkit-filter: brightness(80%); */
+  display: -webkit-flex!important;
+}
+.slider-item {
+  padding: 100px 20%;
+  font-size: 40px!important;
+}
+
+.welcome_bar{
+  background-color: #051e3fe2;
+}
+
+.carousel-actuality{
+  padding-top: 50px;
+}
+
+.carousel-actuality h2{
+  font-size: 24px;
+  text-transform: uppercase;
+}
+
+.carousel-actuality img{
+  filter: brightness(50%);
+  -webkit-filter: brightness(50%);
+}
+
+@media only screen and (max-width: 900px) {
+  .carousel-slider{
+    /* height: ; */
+  }
+}

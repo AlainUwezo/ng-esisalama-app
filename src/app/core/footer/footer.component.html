@@ -1,0 +1,50 @@
+<p class="center-align">
+  <a (click)="onEdit()" style="cursor: pointer;">
+    <i class="material-icons circle medium grey white-text">keyboard_arrow_up</i>
+  </a>
+</p>
+<footer class="page-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col l6 s12" style="margin-bottom: 20px;">
+        <h5 class="white-text flow-text" style="font-size: 18px;">COORDONNEES</h5>
+        <div>
+          <p>République Démocratique du Congo (RDC)</p>
+          <p>
+            <i class="material-icons left">phone</i>
+            +(243) 82 226 74 72
+          </p>
+          <p><img src="./assets/img/social-icons/gmail.png"
+            class="responsive-img social-icon left" width="40" alt="gmail">
+            info@esisalama.org
+          </p>
+        </div>
+      </div>
+      <div class="col l4 offset-l2 s12">
+        <h5 class="white-text" style="font-size: 18px;">QUELQUES LIENS UTILES</h5>
+        <ul>
+          <li><a class="blue-text text-lighten-3" href="#!">Horaires des cours</a></li>
+          <li><a class="blue-text text-lighten-3" href="#!">Voir actualites</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright">
+    <div class="container">
+    © ESISALAMA 2022
+    <p class="right" href="#!">
+      <a href="https://www.google.com/">
+        <img src="./assets/img/social-icons/google.png"
+        class="responsive-img social-icon" width="25" alt="google">
+      </a>&nbsp;&nbsp;
+      <a href="https://web.facebook.com/EsisOfficiel?_rdc=1&_rdr">
+        <img src="./assets/img/social-icons/facebook.png"
+        class="responsive-img social-icon" width="25" alt="facebook"></a>&nbsp;&nbsp;
+      <a href="https://www.youtube.com/channel/UCtDV8isvHNC0fli1FjYB-Xw">
+        <img src="./assets/img/social-icons/youtube.png"
+        class="responsive-img social-icon" width="25" alt="youtube"></a>&nbsp;&nbsp;
+        <span class="right" style="line-height: 30px;">{{date | date:'dd/MM/yyyy'}}</span>
+    </p>
+    </div>
+  </div>
+</footer>
